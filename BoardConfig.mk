@@ -90,6 +90,7 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.memcg=1 lpm_levels
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery kpti=off cgroup_disable=pressure
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+TARGET_KERNEL_NO_GCC := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_SOURCE := kernel/xiaomi/nabu
