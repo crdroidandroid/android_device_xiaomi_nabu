@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020-2022 The LineageOS Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Xiaomi Stylus -->
+    <string name="stylus_title">Rysik Xiaomi</string>
+    <string name="stylus_summary">Skonfiguruj obsługę rysika i jego generację</string>
+    <string name="stylus_switch_title">Włącz rysik</string>
+    <string name="stylus_switch_summary">Włącz obsługę rysika Xiaomi</string>
+    <string name="stylus_gen_switch_title">Obsługa generacji 2</string>
+    <string name="stylus_gen_switch_summary">Należy włączyć tę opcję przed uruchomieniem rysika. Aby zmiany zaczęły obowiązywać, konieczne jest wyłączenie i ponowne włączenie ekranu.</string>
+
+    <!-- Xiaomi Keyboard -->
+    <string name="keyboard_title">Klawiatura Xiaomi</string>
+    <string name="keyboard_summary">Skonfiguruj obsługę podłączonej klawiatury</string>
+    <string name="keyboard_switch_title">Włącz klawiaturę</string>
+    <string name="keyboard_switch_summary">Włącz obsługę klawiatury Xiaomi</string>
+
+    <!-- Double tap to wake -->
+    <string name="double_tap_2_wake_title">Dwukrotne dotknięcie by wybudzić</string>
+    <string name="double_tap_2_wake_summary">Aby wybudzić urządzenie, należy dwukrotnie dotknąć ekranu</string>
+    <string name="double_tap_2_wake_switch_title">Włącz dwukrotne dotknięcie dla wybudzania</string>
+    <string name="double_tap_2_wake_switch_summary">Zezwalaj na wybudzenie urządzenia poprzez dwukrotne dotknięcie ekranu</string>
+
+    <!-- Pen Charging Notification -->
+    <string name="pen_charging_channel_name">Ładowanie rysika</string>
+    <string name="pen_charging_channel_description">Wyświetla stan naładowania baterii rysika podczas ładowania</string>
+    <string name="pen_charging_notification_title">Ładowanie rysika</string>
+    <string name="pen_charging_notification_content">Bateria: %d%%</string>
+    <string name="pen_charging_notification_content_full">Rysik jest w pełni naładowany</string>
+    <string name="pen_charging_notification_content_unknown">Ładowanie…</string>
+
+    <!-- Game Mode -->
+    <string name="game_mode_title">Tryb gry na ekranie dotykowym</string>
+    <string name="game_mode_summary">Przełącz oprogramowanie sprzętowe ekranu dotykowego na MIUI 12.5, aby uzyskać lepszą reakcję na dotyk</string>
+    <string name="game_mode_switch_title">Włącz tryb gry</string>
+    <string name="game_mode_switch_summary">Włącza oprogramowanie układowe ekranu dotykowego MIUI 12.5, zapewniające mniejsze opóźnienie reakcji na dotyk. Aby zmiany zaczęły obowiązywać, konieczne jest wyłączenie i ponowne włączenie ekranu.</string>
+    <string name="game_mode_warning_gen2_pen">Ostrzeżenie: Rysik drugiej generacji nie będzie działał, gdy włączony jest tryb gry. Oprogramowanie MIUI 12.5 nie obsługuje rysika drugiej generacji.</string>
+
+    <!-- Cover Flap -->
+    <string name="coverflap_title">Etui z klapką</string>
+    <string name="coverflap_summary">Skonfiguruj zachowanie klapki ochronnej w trybie czuwania/uśpienia</string>
+    <string name="coverflap_switch_title">Włącz klapkę ochronną</string>
+    <string name="coverflap_switch_summary">Włączanie lub wyłączanie urządzenia po otwarciu lub zamknięciu klapki</string>
+</resources>
