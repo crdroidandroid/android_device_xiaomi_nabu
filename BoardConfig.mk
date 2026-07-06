@@ -99,9 +99,6 @@ TARGET_KERNEL_CONFIG := \
     vendor/debugfs.config \
     vendor/xiaomi/sm8150-common.config \
     vendor/xiaomi/nabu.config
-TARGET_KERNEL_CLANG_VERSION := r563880
-TARGET_KERNEL_LLVM_BINUTILS := 1
-TARGET_KERNEL_ARCH := arm64
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
