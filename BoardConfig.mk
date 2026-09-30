@@ -99,6 +99,8 @@ TARGET_KERNEL_CONFIG := \
     vendor/xiaomi/sm8150-common.config \
     vendor/xiaomi/nabu.config
 
+TARGET_KERNEL_NO_GCC := true
+
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_BOOTIMAGE_PARTITION_SIZE := 134217728
