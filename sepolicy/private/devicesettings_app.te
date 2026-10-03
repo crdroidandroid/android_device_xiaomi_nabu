@@ -1,4 +1,3 @@
-type devicesettings_app, domain;
 typeattribute devicesettings_app mlstrustedsubject;
 
 app_domain(devicesettings_app)
@@ -11,7 +10,6 @@ allow devicesettings_app drmserver_service:service_manager find;
 allow devicesettings_app mediaextractor_service:service_manager find;
 allow devicesettings_app mediametrics_service:service_manager find;
 allow devicesettings_app mediaserver_service:service_manager find;
-allow devicesettings_app hal_custom_hwcontrol_service:service_manager find;
 
 # Allow reading and writing shared prefs
 allow devicesettings_app system_app_data_file:dir create_dir_perms;
@@ -30,7 +28,6 @@ allow devicesettings_app sysfs_thermal:file w_file_perms;
 hal_client_domain(devicesettings_app, hal_motor)
 binder_call(devicesettings_app, hal_motor)
 binder_call(hal_motor, devicesettings_app)
-binder_call(devicesettings_app, hal_custom_hwcontrol)
 set_prop(devicesettings_app, mi_pen_gen_prop)
 
 # Allow reading pen charging status from idt power supply

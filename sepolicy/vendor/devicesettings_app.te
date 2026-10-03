@@ -1,0 +1,2 @@
+# XiaomiParts and NabuExtensions are the clients of the custom hwcontrol HAL
+hal_client_domain(devicesettings_app, hal_custom_hwcontrol)
