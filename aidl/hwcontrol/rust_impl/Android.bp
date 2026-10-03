@@ -5,6 +5,7 @@
 //
 rust_binary {
     name: "custom.hardware.hwcontrol-service",
+    vendor: true,
     vintf_fragments: ["custom.hardware.hwcontrol.xml"],
     init_rc: ["custom.hardware.hwcontrol.rc"],
     srcs: [

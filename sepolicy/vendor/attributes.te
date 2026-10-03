@@ -1,0 +1,3 @@
+# HAL attributes are declared here so that they are available to every
+# vendor policy file, regardless of the order they get concatenated in.
+hal_attribute(custom_hwcontrol)

@@ -1,0 +1,14 @@
+<!--
+     Copyright (C) 2024 Harshit Jain <dev-harsh1998@hotmail.com>
+     SPDX-License-Identifier: Apache-2.0
+-->
+<compatibility-matrix version="1.0" type="framework">
+    <hal format="aidl" optional="true">
+        <name>custom.hardware.hwcontrol</name>
+        <version>2</version>
+        <interface>
+            <name>IHwControl</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</compatibility-matrix>

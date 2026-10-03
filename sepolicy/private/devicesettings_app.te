@@ -1,4 +1,6 @@
-type devicesettings_app, domain;
+# The type itself is declared in the public policy, so that the vendor policy
+# is able to reference it, but coredomain is private and has to be set here.
+typeattribute devicesettings_app coredomain;
 typeattribute devicesettings_app mlstrustedsubject;
 
 app_domain(devicesettings_app)
@@ -11,7 +13,6 @@ allow devicesettings_app drmserver_service:service_manager find;
 allow devicesettings_app mediaextractor_service:service_manager find;
 allow devicesettings_app mediametrics_service:service_manager find;
 allow devicesettings_app mediaserver_service:service_manager find;
-allow devicesettings_app hal_custom_hwcontrol_service:service_manager find;
 
 # Allow reading and writing shared prefs
 allow devicesettings_app system_app_data_file:dir create_dir_perms;
@@ -20,9 +21,6 @@ allow devicesettings_app system_app_data_file:{ file lnk_file } create_file_perm
 # Allow binder communication with gpuservice
 binder_call(devicesettings_app, gpuservice)
 
-# Allow XiaomiParts to write to sysfs_leds
-allow devicesettings_app sysfs_leds:file w_file_perms;
-
 # Allow XiaomiParts to write to sysfs_thermal
 allow devicesettings_app sysfs_thermal:file w_file_perms;
 
@@ -30,7 +28,6 @@ allow devicesettings_app sysfs_thermal:file w_file_perms;
 hal_client_domain(devicesettings_app, hal_motor)
 binder_call(devicesettings_app, hal_motor)
 binder_call(hal_motor, devicesettings_app)
-binder_call(devicesettings_app, hal_custom_hwcontrol)
 set_prop(devicesettings_app, mi_pen_gen_prop)
 
 # Allow reading pen charging status from idt power supply
