@@ -8,7 +8,7 @@
     "target_path": "kernel/xiaomi/nabu"
   },
   {
-    "repository": "crdroidandroid/android_vendor_xiaomi_nabu",
+    "repository": "crdroidandroid/proprietary_vendor_xiaomi_nabu",
     "target_path": "vendor/xiaomi/nabu",
     "remote": "crdroid-gitlab"
   }
