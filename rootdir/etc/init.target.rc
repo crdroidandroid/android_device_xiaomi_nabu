@@ -110,6 +110,12 @@ on post-fs-data
 
     mkdir /data/vendor/thermal 0771 root system
     mkdir /data/vendor/thermal/config 0771 root system
+    # Keep the daemon's runtime dumps group-writable for system so mi_thermald
+    # (uid 0, gid system) never needs the neverallowed dac_override capability,
+    # and make sure the SELinux label is applied (vendor_thermal_data_file).
+    chown root system /data/vendor/thermal /data/vendor/thermal/config
+    chmod 0771 /data/vendor/thermal /data/vendor/thermal/config
+    restorecon_recursive /data/vendor/thermal
 
     chown system system /dev/tfa_reg
     chown system system /dev/tfa_rw
@@ -151,7 +157,20 @@ on boot
     chown system system /sys/touchpanel/pen_gen2_force
     chmod 0644 /sys/touchpanel/pen_gen2_force
 
-    chown system system /sys/class/thermal/thermal_message/sconfig
+    # mi_thermald accesses the thermal_message nodes with dropped privileges
+    # (fsuid system). Keep root as owner (so other root writers are unaffected)
+    # but set group to system with group-write, so the daemon never needs the
+    # neverallowed dac_override capability.
+    chown root system /sys/class/thermal/thermal_message/sconfig
+    chown root system /sys/class/thermal/thermal_message/boost
+    chown root system /sys/class/thermal/thermal_message/screen_state
+    chown root system /sys/class/thermal/thermal_message/temp_state
+    chown root system /sys/class/thermal/thermal_message/cpu_limits
+    chmod 0664 /sys/class/thermal/thermal_message/sconfig
+    chmod 0664 /sys/class/thermal/thermal_message/boost
+    chmod 0664 /sys/class/thermal/thermal_message/screen_state
+    chmod 0664 /sys/class/thermal/thermal_message/temp_state
+    chmod 0664 /sys/class/thermal/thermal_message/cpu_limits
 
     chown system system /sys/class/drm/card0-DSI-1/disp_param
     chmod 0664 /sys/class/drm/card0-DSI-1/disp_param
