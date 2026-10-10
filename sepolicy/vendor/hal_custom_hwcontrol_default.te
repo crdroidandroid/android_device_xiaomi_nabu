@@ -13,3 +13,11 @@ allow hal_custom_hwcontrol_default sysfs_touchpanel:dir { getattr search open };
 allow hal_custom_hwcontrol_default sysfs_touchpanel:{file lnk_file} rw_file_perms;
 allow hal_custom_hwcontrol_default touchfeature_device:chr_file rw_file_perms;
 allowxperm hal_custom_hwcontrol_default touchfeature_device:chr_file ioctl touchfeature_dev_ioctls;
+
+# Debug-only: let a root shell talk to the HAL for debugging (adb shell / service call).
+# Unidirectional (no binder_call reverse direction) and userdebug-only so it never
+# ships on user builds.
+userdebug_or_eng(`
+    allow shell hal_custom_hwcontrol_default:binder { call transfer };
+    allow shell hal_custom_hwcontrol_service:service_manager find;
+')

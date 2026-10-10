@@ -1,0 +1,2 @@
+# Access to the QTI diag interface (calibration / debug logging)
+allow vendor_sensors_qti vendor_diag_device:chr_file rw_file_perms;

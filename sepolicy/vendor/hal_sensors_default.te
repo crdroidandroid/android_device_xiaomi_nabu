@@ -12,3 +12,6 @@ allow hal_sensors_default iio_device:chr_file rw_file_perms;
 
 # Access to ADSP properties
 get_prop(hal_sensors_default, vendor_adsprpc_prop)
+
+# Access to the QTI diag interface (calibration / debug logging)
+allow hal_sensors_default vendor_diag_device:chr_file rw_file_perms;
