@@ -23,12 +23,14 @@ pub fn set_keyboard(enable: bool) -> Result<(), bool> {
 
 // This function gets the keyboard state.
 // output: Result<bool, bool>
-// The function returns Ok(true) if the keyboard is enabled, otherwise it returns Ok(false).
+// The function returns Ok(true) if the keyboard is connected, otherwise it returns Ok(false).
+// Note: the node reports connection status as "1" (connected) / "0" (disconnected),
+// not the enable/disable strings that are written to it to control the keyboard.
 pub fn get_keyboard() -> Result<bool, bool> {
     let sysfs_keyboard_node = "/sys/devices/platform/soc/soc:xiaomi_keyboard/xiaomi_keyboard_conn_status";
     match SysFSManager::read_from_sysfs(sysfs_keyboard_node) {
         Ok(data) => {
-            if data.trim() == "enable_keyboard" {
+            if data.trim() == "1" {
                 Ok(true)
             } else {
                 Ok(false)
